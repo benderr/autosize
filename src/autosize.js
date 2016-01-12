@@ -118,7 +118,7 @@ function assign(ta, {setOverflowX = true, setOverflowY = true} = {}) {
 
 		const evtUpdated = document.createEvent('Event');
 		evtUpdated.initEvent('autosize:updated', true, false);
-		ta.dispatchEvent(evevtUpdated);
+		ta.dispatchEvent(evtUpdated);
 	}
 
 	const pageResize = () => {
