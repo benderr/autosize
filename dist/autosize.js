@@ -18,7 +18,7 @@
 })(this, function (exports, module) {
 	'use strict';
 
-	var set = typeof Set === 'function' ? new Set() : (function () {
+	var set = typeof Set === "function" ? new Set() : (function () {
 		var list = [];
 
 		return {
@@ -30,11 +30,12 @@
 			},
 			'delete': function _delete(key) {
 				list.splice(list.indexOf(key), 1);
-			} };
+			}
+		};
 	})();
 
 	function assign(ta) {
-		var _ref = arguments[1] === undefined ? {} : arguments[1];
+		var _ref = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
 		var _ref$setOverflowX = _ref.setOverflowX;
 		var setOverflowX = _ref$setOverflowX === undefined ? true : _ref$setOverflowX;
@@ -141,6 +142,10 @@
 				evt.initEvent('autosize:resized', true, false);
 				ta.dispatchEvent(evt);
 			}
+
+			var evtUpdated = document.createEvent('Event');
+			evtUpdated.initEvent('autosize:updated', true, false);
+			ta.dispatchEvent(evtUpdated);
 		}
 
 		var pageResize = function pageResize() {
@@ -165,7 +170,8 @@
 			resize: ta.style.resize,
 			overflowY: ta.style.overflowY,
 			overflowX: ta.style.overflowX,
-			wordWrap: ta.style.wordWrap });
+			wordWrap: ta.style.wordWrap
+		});
 
 		ta.addEventListener('autosize:destroy', destroy, false);
 

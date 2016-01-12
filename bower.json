@@ -19,7 +19,7 @@
 	"ignore": [],
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/jackmoore/autosize.git"
+		"url": "http://github.com/benderr/autosize.git"
 	},
 	"main": "dist/autosize.js",
 	"moduleType": [
